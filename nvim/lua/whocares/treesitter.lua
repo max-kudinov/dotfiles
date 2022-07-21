@@ -1,4 +1,4 @@
-require"nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup({
 	ensure_installed = "all",
 	highlight = {
 		enable = true,
@@ -8,5 +8,5 @@ require"nvim-treesitter.configs".setup {
 		enable = true,
 		extended_mode = true,
 		max_file_lines = nil,
-	}
-}
+	},
+})

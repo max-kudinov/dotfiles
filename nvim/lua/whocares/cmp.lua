@@ -40,8 +40,8 @@ vim.cmd("highlight! CmpItemKindKeyword guibg=NONE guifg=#c6d0f5")
 vim.cmd("highlight! CmpItemKindProperty guibg=NONE guifg=#c6d0f5")
 vim.cmd("highlight! CmpItemKindUnit guibg=NONE guifg=#c6d0f5")
 
-local cmp = require "cmp"
-local luasnip = require "luasnip"
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -62,10 +62,10 @@ cmp.setup({
 		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-		["<C-e>"] = cmp.mapping {
+		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
-		},
+		}),
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 
 		-- Super-Tab
@@ -122,8 +122,5 @@ cmp.setup({
 
 -- Autopairs functionality
 
-local cmp_autopairs = require"nvim-autopairs.completion.cmp"
-cmp.event:on(
-	"confirm_done",
-	cmp_autopairs.on_confirm_done()
-)
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
