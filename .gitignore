@@ -1,4 +1,4 @@
-*
+/*
 
 !.gitignore
 !fish/
@@ -8,3 +8,4 @@
 !rofi/
 !picom/
 !polybar/
+!tmux/
