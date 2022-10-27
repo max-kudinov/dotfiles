@@ -1,0 +1,112 @@
+# ~/.config/betterlockscreenrc
+
+# default options
+display_on=1
+span_image=false
+lock_timeout=300
+fx_list=(dim blur dimblur pixel dimpixel color)
+dim_level=40
+blur_level=1
+pixel_scale=10,1000
+solid_color=333333
+wallpaper_cmd="feh --bg-fill"
+quiet=false
+#i3lockcolor_bin="i3lock-color" # Manually set command for i3lock-color
+
+# default theme
+loginbox=00000000
+loginshadow=00000000
+locktext="Welcome back!"
+font="JetBrains Mono"
+ringcolor=232634
+insidecolor=949cbb50
+separatorcolor=00000000
+ringvercolor=e5c890
+insidevercolor=f2d5cf80
+ringwrongcolor=e78284
+insidewrongcolor=e7828490
+timecolor=ca9ee6
+time_format="%H:%M"
+greetercolor=c6d0f5
+layoutcolor=c6d0f5
+keyhlcolor=a6d189
+bshlcolor=e78284
+verifcolor=c6d0f5
+wrongcolor=e78284
+modifcolor=e78284
+bgcolor=00000000
+
+
+# In /sbin/betterlockscreen
+#
+# # lock screen with specified image
+# lock() {
+#
+#     echof act "Locking screen..."
+#
+#     local image="$1"
+#     local fontlg=64
+#     local fontmd=32
+#     local fontsm=24
+#
+#     $i3lockcolor_bin \
+# 	--image "$image" \
+# 	--color "$bgcolor" \
+#         --screen "$display_on" \
+# 	--indicator \
+#         --ind-pos="x+960:y+540" \
+#         --radius=100 \
+#         --ring-width=20 \
+#         --inside-color="$insidecolor" \
+#         --ring-color="$ringcolor" \
+#         --separator-color=$separatorcolor \
+#         --insidever-color="$insidevercolor" \
+#         --insidewrong-color="$insidewrongcolor" \
+#         --ringver-color="$ringvercolor" \
+#         --ringwrong-color="$ringwrongcolor" \
+#         --line-uses-inside \
+#         --keyhl-color="$keyhlcolor" \
+#         --bshl-color="$bshlcolor" \
+#         --clock --force-clock \
+#         --time-pos="x+610-398:y+340-50" \
+#         --time-align 1 \
+#         --time-str "$time_format" \
+#         --time-color="$timecolor" \
+#         --time-font="$font" \
+#         --time-size="$fontlg" \
+#         --date-str "" \
+#         --greeter-pos="x+610-392:y+340+10" \
+#         --greeter-align 1 \
+#         --greeter-text "$locktext" \
+#         --greeter-color="$greetercolor" \
+#         --greeter-font="$font" \
+#         --greeter-size="$fontmd" \
+#         --layout-pos="x+610-390:y+340+45" \
+#         --layout-align 1 \
+#         --layout-color="$layoutcolor" \
+#         --layout-font="$font" \
+#         --layout-size="$fontsm" \
+#         --keylayout "${keylayout:-1}" \
+#         --verif-pos="x+1070:y+700" \
+#         --verif-align 2 \
+#         --verif-text="Verifying..." \
+#         --verif-color="$verifcolor" \
+#         --verif-font="$font" \
+#         --verif-size="$fontsm" \
+#         --wrong-pos="0:0" \
+#         --wrong-align 2 \
+#         --wrong-color="$wrongcolor" \
+#         --wrong-font="$font" \
+#         --wrong-size="$fontsm" \
+# 	--no-modkey-text \
+#         --modif-pos="x+1020:y+700" \
+#         --modif-align 2 \
+#         --modif-size="$fontsm" \
+#         --modif-color="$modifcolor" \
+#         --noinput-text="" \
+#         --pass-media-keys \
+#         --pass-screen-keys \
+#         --pass-volume-keys \
+#         --pass-power-keys \
+#         "${lockargs[@]}"
+# }

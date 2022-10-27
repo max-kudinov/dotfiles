@@ -1,0 +1,12 @@
+/*
+
+!.gitignore
+!fish/
+!i3/
+!kitty/
+!nvim/
+!rofi/
+!polybar/
+!tmux/
+!gtk-3.0/
+!betterlockscreenrc
