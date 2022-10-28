@@ -5,7 +5,8 @@
 !fish/
 !i3/
 !kitty/
-!nvim/
+!nvim/init.lua
+!nvim/lua
 !rofi/
 !polybar/
 !tmux/
