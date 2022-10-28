@@ -200,6 +200,11 @@ _G.packer_plugins = {
     path = "/home/mkudinov/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["presence.nvim"] = {
+    loaded = true,
+    path = "/home/mkudinov/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
+  },
   ["smart-splits.nvim"] = {
     loaded = true,
     path = "/home/mkudinov/.local/share/nvim/site/pack/packer/start/smart-splits.nvim",

@@ -68,4 +68,5 @@ return packer.startup(function(use)
 	use("akinsho/bufferline.nvim") -- tabs on top
 	use("lukas-reineke/indent-blankline.nvim") -- identation guides
 	use("nvim-lualine/lualine.nvim") -- statusline
+    use("andweeb/presence.nvim") -- Discord activity
 end)
