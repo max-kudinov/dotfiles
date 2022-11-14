@@ -28,9 +28,9 @@ local on_attach = function(client, bufnr)
 	-- Highlight symbol under cursor
 	if client.server_capabilities.documentHighlightProvider then
 		vim.cmd([[
-		hi! lspreferenceread cterm=bold ctermbg=red guibg=#414559	
-		hi! LspReferenceText cterm=bold ctermbg=red guibg=#414559	
-		hi! LspReferenceWrite cterm=bold ctermbg=red guibg=#414559	
+		hi! lspreferenceread cterm=bold ctermbg=red guibg=#51576d	
+		hi! LspReferenceText cterm=bold ctermbg=red guibg=#51576d	
+		hi! LspReferenceWrite cterm=bold ctermbg=red guibg=#51576d	
 	  ]])
 		vim.api.nvim_create_augroup("lsp_document_highlight", {
 			clear = false,
