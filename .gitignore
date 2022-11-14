@@ -9,6 +9,6 @@
 nvim/plugin
 !rofi/
 !polybar/
-!tmux/
+!tmux/tmux.conf
 !gtk-3.0/
 !betterlockscreenrc

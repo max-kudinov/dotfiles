@@ -54,10 +54,10 @@ floating_modifier $mod
 
 # Keybinds for screenshots
 bindsym Shift+Print exec --no-startup-id "maim -su | xclip -selection clipboard -t image/png -i"
-bindsym Ctrl+Shift+Print exec --no-startup-id "maim -su ~/Pictures/Screenshots/$(date +%X)"
+bindsym Ctrl+Shift+Print exec --no-startup-id "maim -su ~/Pictures/Screenshots/screenshot-$(date +%M:%S).png"
 bindsym $mod+Print exec --no-startup-id "maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
-bindsym Ctrl+Print exec --no-startup-id "maim -i $(xdotool getactivewindow) ~/Pictures/Screenshots/$(date +%X)"
-bindsym Print exec --no-startup-id "maim ~/Pictures/Screenshots/$(date +%X)"
+bindsym Ctrl+Print exec --no-startup-id "maim -i $(xdotool getactivewindow) ~/Pictures/Screenshots/screenshot-$(date +%M:%S).png"
+bindsym Print exec --no-startup-id "maim ~/Pictures/Screenshots/screenshot-$(date +%M:%S).png"
 
 # start a terminal
 bindsym $mod+Return exec kitty 
@@ -177,8 +177,6 @@ bindsym $mod+Shift+s exec sudo systemctl suspend
 bindsym $mod+Shift+p exec sudo systemctl poweroff
 # Reboot
 bindsym $mod+Shift+o exec sudo systemctl reboot 
-# Lock system
-bindsym $mod+Shift+x exec betterlockscreen -l dimblur --display 1
 
 # Mouse options
 mouse_warping none
@@ -227,7 +225,7 @@ for_window [class="^.*"] border pixel 4
 
 
 # Wallpaper
-exec_always --no-startup-id betterlockscreen -w
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/forest.jpg 
 
 # Keyboard layout
 exec_always --no-startup-id "setxkbmap -layout us,ru -variant ,typewriter -option 'grp:alt_shift_toggle' -option caps:swapescape"
@@ -235,4 +233,4 @@ exec_always --no-startup-id "setxkbmap -layout us,ru -variant ,typewriter -optio
 exec_always --no-startup-id xset r rate 210 50
 
 # Screen lock & suspend on idle
-exec_always --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 'betterlockscreen -l dimblur --display 1' '' --timer 900 'systemctl suspend' ''
+exec_always --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 'systemctl suspend' ''
