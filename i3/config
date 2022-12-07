@@ -20,10 +20,12 @@ font pango:JetBrains Mono 13
 #font pango:DejaVu Sans Mono 8
 
 # Configure monitors 
+exec_always --no-startup-id xrandr --output HDMI-A-1 --off 
 exec_always --no-startup-id xrandr --output DisplayPort-0 --mode 3840x2160
 exec_always --no-startup-id xrandr --output DisplayPort-1 --mode 3840x2160
 exec_always --no-startup-id xrandr --output DisplayPort-1 --right-of DisplayPort-0
 exec_always --no-startup-id xrandr --output DisplayPort-1 --primary
+exec --no-startup-id i3-msg restart
 
 # Enable CRT 
 bindsym $mod+Shift+m exec --no-startup-id ~/scripts/crt.sh
@@ -38,6 +40,9 @@ bindsym $mod+Shift+n exec --no-startup-id xrandr --output HDMI-A-1 --off
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Enable polkit
+exec --no-startup-id /usr/bin/polkit-dumb-agent &
 
 # Set default sound source 
 exec_always --no-startup-id pactl set-sink-port alsa_output.pci-0000_21_00.0.analog-stereo "analog-output-lineout;output-headphones"
@@ -222,6 +227,9 @@ default_border pixel 4
 client.focused #81c8be #81c8be #ffffff #81c8be #81c8be
 client.urgent #e78284 #e78284 #ffffff #e78284 #e78284
 for_window [class="^.*"] border pixel 4
+
+# Resize and center file chooser window
+for_window [window_role="(?i)GtkFileChooserDialog"] resize set 1920 1080 move position center
 
 
 # Wallpaper
