@@ -1,15 +1,16 @@
 -- Setup LSP
 
-require("nvim-lsp-installer").setup({
+require("mason").setup({
 	ui = {
 		border = "rounded",
 		icons = {
-			server_installed = "✓",
-			server_pending = "➜",
-			server_uninstalled = "✗",
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
 		},
 	},
 })
+require("mason-lspconfig").setup()
 
 local on_attach = function(client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -87,7 +88,7 @@ local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Servers setup
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { Lua = { diagnostics = { globals = { "vim" } } } },

@@ -23,6 +23,7 @@ font pango:JetBrains Mono 13
 exec_always --no-startup-id xrandr --output HDMI-A-1 --off 
 exec_always --no-startup-id xrandr --output DisplayPort-0 --mode 3840x2160
 exec_always --no-startup-id xrandr --output DisplayPort-1 --mode 3840x2160
+exec_always --no-startup-id xrandr --output DisplayPort-1 --set TearFree on
 exec_always --no-startup-id xrandr --output DisplayPort-1 --right-of DisplayPort-0
 exec_always --no-startup-id xrandr --output DisplayPort-1 --primary
 exec --no-startup-id i3-msg restart
@@ -33,13 +34,16 @@ bindsym $mod+Shift+m exec --no-startup-id ~/scripts/crt.sh
 # Disable CRT
 bindsym $mod+Shift+n exec --no-startup-id xrandr --output HDMI-A-1 --off 
 
+# Game mode 
+bindsym $mod+g exec --no-startup-id ~/scripts/gaming.sh 
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 #exec --no-startup-id dex --autostart --environment i3
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Enable polkit
 exec --no-startup-id /usr/bin/polkit-dumb-agent &
@@ -240,5 +244,5 @@ exec_always --no-startup-id "setxkbmap -layout us,ru -variant ,typewriter -optio
 # Keyboard rate
 exec_always --no-startup-id xset r rate 210 50
 
-# Screen lock & suspend on idle
-exec_always --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 'systemctl suspend' ''
+# Screen suspend on idle
+exec_always --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 'sudo systemctl suspend' ''
