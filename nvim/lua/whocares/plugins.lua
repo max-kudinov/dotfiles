@@ -70,4 +70,10 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim") -- identation guides
 	use("nvim-lualine/lualine.nvim") -- statusline
     use("andweeb/presence.nvim") -- Discord activity
+    use{
+        "ivanesmantovich/xkbswitch.nvim", -- switch to English for movement
+        config = function()
+            require("xkbswitch").setup()
+        end,
+    }
 end)

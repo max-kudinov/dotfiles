@@ -35,7 +35,7 @@ bindsym $mod+Shift+m exec --no-startup-id ~/scripts/crt.sh
 bindsym $mod+Shift+n exec --no-startup-id xrandr --output HDMI-A-1 --off 
 
 # Game mode 
-bindsym $mod+g exec --no-startup-id ~/scripts/gaming.sh 
+# bindsym $mod+g exec --no-startup-id ~/scripts/gaming.sh 
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -48,8 +48,9 @@ bindsym $mod+g exec --no-startup-id ~/scripts/gaming.sh
 # Enable polkit
 exec --no-startup-id /usr/bin/polkit-dumb-agent &
 
-# Set default sound source 
+# Set default sound source and default mic gain
 exec_always --no-startup-id pactl set-sink-port alsa_output.pci-0000_21_00.0.analog-stereo "analog-output-lineout;output-headphones"
+exec_always --no-startup-id amixer sset Capture 45000
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
