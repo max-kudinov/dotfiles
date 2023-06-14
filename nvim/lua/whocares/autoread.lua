@@ -15,6 +15,6 @@ end
 vim.api.nvim_command(
   "command! -nargs=1 Watch call luaeval('watch_file(_A)', expand('<args>'))")
 
-vim.api.nvim_create_autocmd("NewBuf", {
-    callback = vim.cmd("Watch %")
+vim.api.nvim_create_autocmd("BufNew", {
+   command = "Watch %"
 })
