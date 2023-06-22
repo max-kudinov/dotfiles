@@ -99,6 +99,11 @@ lspconfig.pyright.setup({
 	on_attach = on_attach,
 })
 
+lspconfig.csharp_ls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 -- Null-ls setup
 local formatting = require("null-ls").builtins.formatting
 local diagnostics = require("null-ls").builtins.diagnostics
@@ -107,6 +112,7 @@ require("null-ls").setup({
 	sources = {
 		formatting.stylua,
 		formatting.black,
+        formatting.csharpier,
 		diagnostics.flake8.with({ extra_args = {"--max-line-length", 120}}),
 	},
 })
