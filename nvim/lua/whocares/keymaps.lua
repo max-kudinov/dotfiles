@@ -30,8 +30,6 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Just random stuff I wanna add
-keymap("n", ";", "$", opts)
-keymap("n", "d;", "d$", opts)
 keymap("n", "<leader>n", ":noh<CR>", opts)
 
 -- Stay in indent mode
