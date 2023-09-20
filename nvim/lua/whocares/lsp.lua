@@ -111,8 +111,10 @@ local diagnostics = require("null-ls").builtins.diagnostics
 require("null-ls").setup({
 	sources = {
 		formatting.stylua,
-		formatting.black,
         formatting.csharpier,
-		diagnostics.flake8.with({ extra_args = {"--max-line-length", 120}}),
+		formatting.black,
+		diagnostics.flake8,
+        -- diagnostics.ruff,
+        -- diagnostics.mypy,
 	},
 })
