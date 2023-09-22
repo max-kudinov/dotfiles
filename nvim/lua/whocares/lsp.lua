@@ -113,7 +113,7 @@ require("null-ls").setup({
 		formatting.stylua,
         formatting.csharpier,
 		formatting.black,
-		diagnostics.flake8,
+		diagnostics.flake8.with({ extra_args = {"--max-line-length", 88}}),
         -- diagnostics.ruff,
         -- diagnostics.mypy,
 	},
