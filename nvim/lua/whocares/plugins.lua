@@ -42,7 +42,7 @@ return packer.startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("jose-elias-alvarez/null-ls.nvim")
 
@@ -56,24 +56,32 @@ return packer.startup(function(use)
 
 	-- Minor useful stuff
 	use("windwp/nvim-autopairs") -- autopairs for quotes, brackets etc
-	use{
+	use({
 		"numToStr/Comment.nvim", -- comments
 		config = function()
 			require("Comment").setup()
 		end,
-	}
-    use("mrjones2014/smart-splits.nvim") -- better split resizing and navigation
+	})
+	use("mrjones2014/smart-splits.nvim") -- better split resizing and navigation
 	use("lewis6991/gitsigns.nvim") -- git integration
 	use("kyazdani42/nvim-web-devicons") -- icons
 	use("kyazdani42/nvim-tree.lua") -- file explorer
 	use("akinsho/bufferline.nvim") -- tabs on top
 	use("lukas-reineke/indent-blankline.nvim") -- identation guides
 	use("nvim-lualine/lualine.nvim") -- statusline
-    use("andweeb/presence.nvim") -- Discord activity
-    use{
-        "ivanesmantovich/xkbswitch.nvim", -- switch to English for movement
-        config = function()
-            require("xkbswitch").setup()
-        end,
-    }
+	use("andweeb/presence.nvim") -- Discord activity
+    use("nvim-treesitter/nvim-treesitter-context") -- show which function I'm in
+	use({
+		"kylechui/nvim-surround",
+		tag = "*",
+		config = function()
+			require("nvim-surround").setup() -- add/delete/change surrounding pairs
+		end,
+	})
+	use({
+		"ivanesmantovich/xkbswitch.nvim", -- switch to English for movement
+		config = function()
+			require("xkbswitch").setup()
+		end,
+	})
 end)
