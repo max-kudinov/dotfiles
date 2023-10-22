@@ -45,6 +45,7 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("jose-elias-alvarez/null-ls.nvim")
+    use("mfussenegger/nvim-jdtls")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

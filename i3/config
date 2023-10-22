@@ -46,7 +46,7 @@ bindsym $mod+Shift+n exec --no-startup-id xrandr --output HDMI-A-1 --off
 # exec --no-startup-id nm-applet
 
 # Enable polkit
-exec --no-startup-id /usr/bin/polkit-dumb-agent &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set default sound source and default mic gain
 exec_always --no-startup-id pactl set-sink-port alsa_output.pci-0000_21_00.0.analog-stereo "analog-output-lineout;output-headphones"
@@ -182,11 +182,11 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # Suspend system
-bindsym $mod+Shift+s exec sudo systemctl suspend
+bindsym $mod+Shift+s exec systemctl suspend
 # Shutdown now
-bindsym $mod+Shift+p exec sudo systemctl poweroff
+bindsym $mod+Shift+p exec systemctl poweroff
 # Reboot
-bindsym $mod+Shift+o exec sudo systemctl reboot 
+bindsym $mod+Shift+o exec systemctl reboot 
 
 # Mouse options
 mouse_warping none

@@ -104,6 +104,11 @@ lspconfig.csharp_ls.setup({
     on_attach = on_attach,
 })
 
+lspconfig.jdtls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 -- Null-ls setup
 local formatting = require("null-ls").builtins.formatting
 local diagnostics = require("null-ls").builtins.diagnostics
