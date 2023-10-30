@@ -182,11 +182,11 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # Suspend system
-bindsym $mod+Shift+s exec systemctl suspend
+bindsym $mod+Shift+s exec sudo systemctl suspend
 # Shutdown now
-bindsym $mod+Shift+p exec systemctl poweroff
+bindsym $mod+Shift+p exec sudo systemctl poweroff
 # Reboot
-bindsym $mod+Shift+o exec systemctl reboot 
+bindsym $mod+Shift+o exec sudo systemctl reboot 
 
 # Mouse options
 mouse_warping none
