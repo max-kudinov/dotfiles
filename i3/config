@@ -70,7 +70,7 @@ bindsym Ctrl+Print exec --no-startup-id "maim -i $(xdotool getactivewindow) ~/Pi
 bindsym Print exec --no-startup-id "maim ~/Pictures/Screenshots/screenshot-$(date +%M:%S).png"
 
 # start a terminal
-bindsym $mod+Return exec kitty 
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
