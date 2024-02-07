@@ -68,9 +68,16 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons") -- icons
 	use("kyazdani42/nvim-tree.lua") -- file explorer
 	use("akinsho/bufferline.nvim") -- tabs on top
-	use("lukas-reineke/indent-blankline.nvim") -- identation guides
+	use({
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("ibl").setup({
+                scope = { enabled = false },
+            }) -- identation guides
+        end,
+    })
 	use("nvim-lualine/lualine.nvim") -- statusline
-	use("andweeb/presence.nvim") -- Discord activity
+	-- use("andweeb/presence.nvim") -- Discord activity
     use("nvim-treesitter/nvim-treesitter-context") -- show which function I'm in
 	use({
 		"kylechui/nvim-surround",

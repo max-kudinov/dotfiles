@@ -109,6 +109,15 @@ lspconfig.jdtls.setup({
     on_attach = on_attach,
 })
 
+lspconfig.clangd.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = {
+        "clangd",
+        "--offset-encoding=utf-16",
+    },
+})
+
 -- Null-ls setup
 local formatting = require("null-ls").builtins.formatting
 local diagnostics = require("null-ls").builtins.diagnostics
@@ -118,6 +127,7 @@ require("null-ls").setup({
 		formatting.stylua,
         formatting.csharpier,
 		formatting.black,
+        formatting.clang_format,
 		diagnostics.flake8.with({ extra_args = {"--max-line-length", 88}}),
         -- diagnostics.ruff,
         -- diagnostics.mypy,
