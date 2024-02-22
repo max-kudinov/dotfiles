@@ -246,4 +246,4 @@ exec_always --no-startup-id "setxkbmap -layout us,ru -variant ,typewriter -optio
 exec_always --no-startup-id xset r rate 210 50
 
 # Screen suspend on idle
-exec_always --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 'sudo systemctl suspend' ''
+# exec_always --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 'sudo systemctl suspend' ''
