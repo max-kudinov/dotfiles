@@ -92,4 +92,5 @@ return packer.startup(function(use)
 			require("xkbswitch").setup()
 		end,
 	})
+    use("mfussenegger/nvim-lint")
 end)

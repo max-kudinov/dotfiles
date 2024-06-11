@@ -13,11 +13,14 @@ require("mason").setup({
 require("mason-lspconfig").setup()
 
 local on_attach = function(client, bufnr)
+    -- other settings
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "M", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", " o", vim.diagnostic.open_float, bufopts)
 	vim.keymap.set("n", "<S-j>", vim.diagnostic.goto_next, bufopts)
 	vim.keymap.set("n", "<S-k>", vim.diagnostic.goto_prev, bufopts)
 	vim.keymap.set("n", " r", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", " lf", vim.lsp.buf.format, bufopts)
 	vim.keymap.set("n", " F", function()
 		vim.lsp.buf.format({
 			bufnr = bufnr,
@@ -123,9 +126,38 @@ lspconfig.clangd.setup({
     },
 })
 
+lspconfig.bashls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
+
 lspconfig.verible.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+})
+
+require('lint').linters_by_ft = {
+    systemverilog = {'verilator'},
+    verilog = {'verilator'}
+}
+
+local verilator = require('lint').linters.verilator
+
+verilator.args = {
+    '--lint-only',
+    '-F',
+    vim.fs.find("verilator.f", {
+        upward = true,
+        stop = "/home",
+        type = "file"
+    })[1]
+}
+
+vim.api.nvim_create_autocmd(
+    { 'BufWritePost', 'BufEnter', 'InsertLeave' }, {
+    callback = function()
+        require('lint').try_lint()
+    end,
 })
 
 -- Null-ls setup
@@ -139,6 +171,9 @@ require("null-ls").setup({
 		formatting.black,
         formatting.clang_format,
 		diagnostics.flake8.with({ extra_args = {"--max-line-length", 88}}),
+        formatting.verible_verilog_format.with(
+        { extra_args = {"--indentation_spaces", 4}}
+        ),
         -- diagnostics.ruff,
         -- diagnostics.mypy,
 	},
