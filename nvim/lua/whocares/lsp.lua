@@ -55,6 +55,11 @@ local on_attach = function(client, bufnr)
 	if client.name == "pyright" then
 		vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 	end
+
+	-- Disable verible diagnostics
+	if client.name == "verible" then
+		vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+	end
 end
 
 -- Add borders
@@ -116,6 +121,11 @@ lspconfig.clangd.setup({
         "clangd",
         "--offset-encoding=utf-16",
     },
+})
+
+lspconfig.verible.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
 })
 
 -- Null-ls setup
