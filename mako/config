@@ -1,0 +1,20 @@
+anchor=top-right
+font=JetBrains Mono NF 13
+
+icons=1
+markup=1
+default-timeout=5000
+
+padding=15
+margin=40,25
+
+width=400
+height=200
+
+background-color=#282828
+text-color=#ebdbb2
+
+border-color=#b16286
+border-size=2
+border-radius=10
+

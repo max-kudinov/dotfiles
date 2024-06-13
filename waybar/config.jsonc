@@ -1,0 +1,80 @@
+/* Based on this awesome config https://github.com/lgaboury/Sway-Waybar-Install-Script */
+
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "margin": "5 5 0 5",
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "wireplumber", "backlight"],
+    "modules-center": ["clock"],
+    "modules-right": ["memory", "cpu", "temperature", "network", "battery", "hyprland/language"],
+
+
+    //***************************
+    //*  Modules configuration  *
+    //***************************
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+	"show-special": true,
+	"special-visible-only": true,
+    },
+
+    "hyprland/language": {
+        "format": "  {}",
+	"format-en": "US",
+	"format-ru": "RU",
+    },
+
+    "clock": {
+	"interval": 5,
+        "format": "{:%a, %d %b, %H:%M}"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": "{icon}   {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+    },
+
+    "battery": {
+	"interval": 5,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "{icon} 󱐋 {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+    },
+
+    "network": {
+	"interval": 5,
+	"format-wifi": "{icon}",
+	"format-ethernet": "󰈀",
+	"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+	"format-disconnected": "󰤮",
+    },
+
+    "cpu": {
+	    "interval": 5, 
+	    "format": "  {usage}%",
+    },
+
+    "memory": {
+	    "interval": 5,
+	    "format": "  {used} GiB",
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁",
+        "format-icons": "󰕾",
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰛩", "󰛩", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"],
+    },
+}

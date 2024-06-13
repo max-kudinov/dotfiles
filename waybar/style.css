@@ -1,0 +1,156 @@
+/* Based on this awesome config https://github.com/lgaboury/Sway-Waybar-Install-Script */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrains Mono NF;
+    font-size: 16px;
+    min-height: 20px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    background: #282828;
+}
+
+#workspaces button {
+    transition: none;
+    color: #7c6f64;
+    background: transparent;
+    padding: 5px;
+    font-size: 18px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-radius: inherit;
+    color: #fbf1c7;
+}
+
+#workspaces button.active {
+    color: #ebdbb2;
+}
+
+#language {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#clock {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#memory {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#cpu {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#temperature {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#battery {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#battery.charging {
+    color: #b8bb26;
+}
+
+#battery.warning:not(.charging) {
+    color: #fabd2f;
+}
+
+#battery.critical:not(.charging) {
+    color: #cc241d;
+}
+
+#network {
+    margin-right: 8px;
+    padding-left: 12px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#wireplumber {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}
+
+#wireplumber.muted {
+    font-size: 22px;
+    color: #cc241d;
+}
+
+#backlight {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ebdbb2;
+    background: #282828;
+}

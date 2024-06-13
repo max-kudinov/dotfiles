@@ -1,0 +1,22 @@
+configuration {
+	font: "JetBrains Mono NF 14";
+	show-icons: true;
+	icon-theme: "Numix-Square";
+	terminal: "alacritty";
+	display-drun: "  Launch:";
+	drun-display-format: "{icon} {name}";
+	hover-select: true;
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+
+}
+
+@theme "gruvbox"
