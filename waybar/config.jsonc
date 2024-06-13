@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "wireplumber", "backlight"],
     "modules-center": ["clock"],
-    "modules-right": ["memory", "cpu", "temperature", "network", "battery", "hyprland/language"],
+    "modules-right": ["memory", "cpu", "temperature", "battery", "network", "hyprland/language"],
 
 
     //***************************
