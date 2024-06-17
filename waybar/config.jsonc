@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "wireplumber", "backlight"],
     "modules-center": ["clock"],
-    "modules-right": ["memory", "cpu", "temperature", "battery", "network", "hyprland/language"],
+    "modules-right": ["memory", "cpu", "temperature", "battery", "network", "idle_inhibitor", "hyprland/language"],
 
 
     //***************************
@@ -76,5 +76,13 @@
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": ["󰛩", "󰛩", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"],
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰒳",
+            "deactivated": "󰒲",
+        }
     },
 }
