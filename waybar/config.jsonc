@@ -5,7 +5,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "margin": "5 5 0 5",
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "wireplumber", "backlight"],
+    "modules-left": ["hyprland/workspaces", "wireplumber", "backlight", "custom/vpn"],
     "modules-center": ["clock"],
     "modules-right": ["memory", "cpu", "temperature", "battery", "network", "idle_inhibitor", "hyprland/language"],
 
@@ -55,6 +55,12 @@
 	"format-ethernet": "󰈀",
 	"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
 	"format-disconnected": "󰤮",
+    },
+
+    "custom/vpn": {
+        "interval": 5,
+        "format": "{}",
+        "exec": "ip a show | grep -qF awg0 && echo  || echo ",
     },
 
     "cpu": {
